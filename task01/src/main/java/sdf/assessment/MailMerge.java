@@ -7,7 +7,6 @@ import java.util.Scanner;
 
 public class MailMerge {
 
-  //private LinkedList<String> attributes = new LinkedList<>();
   private static LinkedList<String> recipientsInfo = new LinkedList<>();
   private static LinkedList<String> template = new LinkedList<>();
   private static String csvFile = "";
@@ -34,6 +33,7 @@ public class MailMerge {
     }
   }
 
+
   public static void printMail(String recipient){
     String[] recipientInfo = recipient.split(",");
     for(String templateLine: template){
@@ -47,6 +47,7 @@ public class MailMerge {
     System.out.println();
   }
 
+
   public static void readFile(String fileName){
     try {
       File file = new File("./files/"+fileName);
@@ -58,13 +59,13 @@ public class MailMerge {
         else if(fileName.contains("txt"))
           template.add(scan.nextLine());
       }
-
       scan.close();
       
     } catch (FileNotFoundException e) {
       System.out.printf("File: %s not found", fileName);
     }
   }
+
 
   public static String[] getAttributes(){
     readFile(csvFile);
