@@ -59,6 +59,8 @@ public class ClientConnectionHandler implements Runnable{
           connectionSuccess = true;
           write(connectionSuccess);
           System.out.println("Client connection SUCCESS");
+        }else{
+          System.out.println("Client float incorrect");
         }
       }else{
         System.out.println("Request ID fail");
